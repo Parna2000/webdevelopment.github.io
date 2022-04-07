@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(33, 32, 32);
+    color: black;
+    margin: 0;
+    overflow-x: hidden;
+}
+.container{
+    background-color: #fafafa;
+    min-height: 100vh;
+    width: 100vw;
+    padding: 50px;
+    transform-origin: top left;
+    transition: 0.5s linear;
+}
+.container.show-nav{
+    transform: rotate(-20deg);
+}
+.circle-container{
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+.circle{
+    background-color: palevioletred;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+.circle button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background-color: transparent;
+    border: 0;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+.circle button#open{
+    left: 60%;
+}
+.circle button#close{
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+.container.show-nav .circle{
+    transform: rotate(-70deg);
+}
+nav{
+    position: fixed;
+    left: 0px;
+    bottom: 40px;
+    /* transform: translate(-100%); */
+    /* transition:transform 0.4s ease-in; */
+}
+nav ul{
+    list-style: none;
+    padding-left: 30px;
+}
+nav ul li{
+    color: white;
+    margin: 40px 0px;
+    transform: translate(-100%);
+    transition:transform 0.4s ease-in;
+}
+nav ul li i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+nav ul li+li{
+    margin-left: 15px;
+    transform: translate(-150%);
+}
+nav ul li+li+li{
+    margin-left: 30px;
+    transform: translate(-200%);
+}
+.container.show-nav + nav li{
+    transform: translate(0);
+    transition: transform 0.4s linear;
+}
+.content small{
+    font-style: italic;
+    color: gray;
+}
+.content h1{
+    margin-bottom: 0;
+}
+.content p{
+    font-size: 16px;
+    line-height: 1.5;
+}
+.links{
+    transform: translateY(90%);
+}
+.links a{
+    font-family: inherit;
+    font-size: 20px;
+    padding: 10px 40px;
+    border-radius: 8px;
+    background-color: rgb(0, 195, 255);
+    border: 0;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.links a:active{
+    transform: scale(0.98);
+}
